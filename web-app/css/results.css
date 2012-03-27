@@ -1,0 +1,108 @@
+body {
+	margin: 20px;
+	padding: 0px;
+	font: 22px arial, helvetica, sans-serif;
+}
+.resultsTop {
+	height:80px;
+	border: 1px solid;
+	border-style: none none solid none;
+}
+.topNav {
+	height:80px;
+	width:160px;
+
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+#topCenter {
+	text-align: center;
+	height: 80px;
+	margin: 0px 170px 0px 170px;
+	min-width: 600px;
+	overflow: hidden;
+}
+.resultsStats {
+	width: 220px;
+	height: 1200px;
+}
+
+.huge {
+	font: 55px arial, helvetica, sans-serif;
+}
+
+.reallyhuge {
+	font: 85px arial, helvetica, sans-serif;
+}
+
+.score {
+	margin-top: 10px;
+	width: 160px;
+	height: 110px;
+	border: 1px solid;
+	text-align: center;
+	vertical-align: center;
+}
+
+.stats {
+	text-align: left;
+}
+
+.stats li {
+}
+.stats table td {
+	padding:5px;
+}
+
+.resultsVotes {
+	margin-left: 170px;
+}
+
+.vote {
+	height: 90px;
+	float:left;
+	margin: 5px 20px 5px 20px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.vote div {
+	padding: 5px;
+}
+
+.user {
+	width: 150px;
+	display:block;
+}
+
+.voteScore {
+	width: 115px;
+	height: 70px;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: center;
+}
+.smaller {
+	font-size: 75%;
+}
+.other {
+	width: 120px;
+	font-size: 66%;
+}
+.comment {
+	overflow: auto;
+	width: 1000px;
+	height:85px;
+}
+#songname {
+	margin-left:50px;
+	display:none;	
+}
+#songwhat {
+	margin-left:50px;
+	cursor: pointer;
+}
