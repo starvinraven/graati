@@ -19,7 +19,14 @@ class VotingController {
 			redirect(uri:"/")
 		}
 		
-		def albums = raati.albums.sort { it.releaseYear }
+		def albums = raati.albums.sort { a, b ->
+			if(a.releaseYear == b.releaseYear) {
+				a.id - b.id
+			} else {
+				a.releaseYear - b.releaseYear
+			}
+		}
+		
 		// def hasUrls = raati.albums.each { it.songs.filter { song -> song.audioUrl != null } }.size() > 0
 		def votes = [:]
 		def comments = [:]

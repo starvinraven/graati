@@ -21,7 +21,7 @@ class VoteService {
 	
 	def getRaatiAggregates(Raati raati) {
 		def votes = Vote.findAllByRaati(raati)
-		if(votes.any { !it.normalizedScore }) {
+		if(votes.any { it.score && !it.normalizedScore }) {
 			createNormalizedScores(raati)
 		}
 		ResultAggregates aggs = new ResultAggregates(votes)
@@ -30,14 +30,14 @@ class VoteService {
 	// [ song : SongResults, song : SongResults, ... ]
 	def getRaatiResults(Raati raati) {
 		def votes = Vote.findAllByRaati(raati)
-		if(votes.any { !it.normalizedScore }) {
+		if(votes.any { it.score && !it.normalizedScore }) {
 			createNormalizedScores(raati)
 		}
 		def songs = raati.albums.collect { it.songs } ?.flatten().unique()
 		def results = [:]
 		songs.each { song ->
 			def votesForSong = Vote.findAllByRaatiAndSong(raati, song).sort { a, b ->
-				b.normalizedScore <=> a.normalizedScore
+				(b?.normalizedScore ?: 0) <=> (a?.normalizedScore ?: 0)
 			}
 			def votesForSongByUser = votesForSong?.groupBy {it.user}
 			
@@ -50,29 +50,37 @@ class VoteService {
 			results.put((song), resultsForSong)
 		}
 		results = results.sort { a, b ->
-			b.value.meanNormalizedScore <=> a.value.meanNormalizedScore // descending order
+			(b?.value?.meanNormalizedScore ?: 0) <=> (a?.value?.meanNormalizedScore ?: 0) // descending order
 		}
-		println "results: "+results
+		//println "results: "+results
 		results
 	}
 	/*
 	 * Write normalized scores to db
 	 */
 	def createNormalizedScores(Raati raati) {
+		def startTime = System.currentTimeMillis()
+		println "creating normalized scores!"
 		def votes = Vote.findAllByRaati(raati).groupBy { it.user }
 		
+		// map: [user1: [vote1, vote2..], user2: [vote1, vote2..], ..]
 		votes.each { vote ->
-			// println "vote: "+vote
-			vote.each { // key: user, value: list of votes
+			// user: [vote1, vote2..
+			// it.key: user
+			// it.value: list
+			vote.each { 
 				def userVotes = it.value
 				// println "votes for user: ${it.key.username}: ${userVotes.collect {it.score}}"
 				ResultAggregates aggregates = new ResultAggregates(userVotes)
-				userVotes.each { userVote -> 
-					userVote.normalizedScore = aggregates.getNormalizedScore(userVote.score)
-					userVote.save(flush:true)
+				userVotes.each { userVote ->
+					if(userVote?.score) {
+						userVote.normalizedScore = aggregates.getNormalizedScore(userVote.score)
+						userVote.save(flush:true)
+					}
 				}
 			}
 		}
+		println "done! took ${System.currentTimeMillis()-startTime} ms"
 	}
 
 	/**

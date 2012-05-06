@@ -7,7 +7,7 @@ class Raati {
 	}
 	
 	static mapping = {
-		// albums(sort: "releaseYear")
+		//albums(sort: "releaseYear")
 	}
 	
 	String name

@@ -23,7 +23,7 @@ class GraatiTagLib {
 	
 	def voteToColor = { attrs ->
 		// println attrs
-		def score = attrs['score'] as Float
+		def score = attrs.score ? attrs.score as Float : null
 		if(!score) {
 			out << "#ffffff"
 			return
@@ -41,7 +41,7 @@ class GraatiTagLib {
 		def blue = a*score*score + b*score + c as Integer
 		
 		def result = "#${Integer.toString(red, 16)}${Integer.toString(green, 16)}${Integer.toString(blue, 16)}"
-		println result
+		//println result
 		out << result
 	/*
     k_r = -22.1

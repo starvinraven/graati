@@ -33,11 +33,20 @@ class RegisterController extends AbstractS2UiController {
 		String salt = saltSource instanceof NullSaltSource ? null : command.username
 		String password = springSecurityService.encodePassword(command.password, salt)
 		def user = lookupUserClass().newInstance(email: command.email, username: command.username,
-				password: password, accountLocked: true, enabled: true)
+				password: password, accountLocked: false, enabled: true)
 		if (!user.validate() || !user.save()) {
-			// TODO
+			throw new RuntimeException("Could not save user!")
 		}
 
+		def conf = SpringSecurityUtils.securityConfig
+		def UserRole = lookupUserRoleClass()
+		def Role = lookupRoleClass()
+		for (roleName in conf.ui.register.defaultRoleNames) {
+			UserRole.create user, Role.findByAuthority(roleName)
+		}
+		
+		/*
+		
 		def registrationCode = new MyRegistrationCode(username: user.username).save()
 		String url = generateLink('verifyRegistration', [t: registrationCode.token])
 
@@ -52,6 +61,7 @@ class RegisterController extends AbstractS2UiController {
 			subject conf.ui.register.emailSubject
 			html body.toString()
 		}
+		*/
 
 		render view: 'index', model: [emailSent: true]
 	}

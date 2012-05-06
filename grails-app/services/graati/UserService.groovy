@@ -67,7 +67,7 @@ class UserService {
 				return true
 			case RaatiPrivacy.PARTICIPANT_VIEWING:
 			case RaatiPrivacy.PARTICIPANT_VOTING:
-				return (user == raati.owner || user in raati.participants)
+				return (user == raati.owner || user in raati.participants || UserRole.get(user.id, Role.findByAuthority("ROLE_ADMIN")?.id))
 		}
 	}
 	

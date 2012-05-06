@@ -3,3 +3,6 @@ target
 *.war
 .classpath
 .project
+.settings
+stacktrace.log
+target-eclipse/

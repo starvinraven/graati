@@ -76,7 +76,7 @@ class ResultsController {
 			redirect(uri:"/")
 		}
 		def songNumber = params.songNumber
-		println "songNumber: ${songNumber}, params: ${params}"
+		// println "songNumber: ${songNumber}, params: ${params}"
 		def results = voteService.getRaatiResults(raati)
 		def song 
 		def result
@@ -86,9 +86,9 @@ class ResultsController {
 		def raatiMean = raatiAggs.normStats.getMean()
 		results.eachWithIndex { key, value, index ->
 			max++
-			println index
+			//println index
 			if(index == ( (songNumber as int) -1)) {
-				println "got it"
+				//println "got it"
 				song = key
 				result = value
 			}
@@ -98,6 +98,11 @@ class ResultsController {
 			redirect(uri:"/")
 		}
 		println "song: ${song}, result: ${result}, number: ${songNumber}"
+		result.votes.each {
+			println it
+			println it.value.normalizedScore
+			println it.value.normalizedScore[0]
+		}
 		[ result : result, song: song, raati: raati, number: songNumber as int, max: max as int, 
 			raatiStdDev:raatiStdDev, raatiMean:raatiMean]
 	}

@@ -11,7 +11,10 @@
 
 	<g:if test='${emailSent}'>
 	<br/>
+	<%-- 
 	<g:message code='spring.security.ui.register.sent'/>
+	--%>
+	Welcome! Email sending has been disabled, so your account should be good to go.
 	</g:if>
 	<g:else>
 

@@ -10,6 +10,17 @@ class BootStrap {
 	
 	def init = { servletContext ->
 		
+		if(!User.findByUsername('admin')) {
+			println "create admin"
+			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
+			def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
+			
+			String password = springSecurityService.encodePassword('bra4ti')
+			User admin = new User(username: 'admin', enabled: true, password: password, email:"esa.virtanen@gmail.com").save(flush:true)
+			UserRole.create(admin, adminRole, true)
+			UserRole.create(admin, userRole, true)
+		}
+		
 		switch (GrailsUtil.environment) {
 			case 'production':
 			//createUBRaati()

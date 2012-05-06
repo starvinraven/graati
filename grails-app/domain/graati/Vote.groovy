@@ -22,3 +22,4 @@ class Vote {
 		// "$user gave $score to $song"
 	}
 }
+

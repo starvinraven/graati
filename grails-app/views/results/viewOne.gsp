@@ -34,7 +34,7 @@ $(document).ready(function() {
 </g:if>
 </div>
 <div id="topCenter" class="huge">
-<span class="smaller">${number}/${max}</span><span id="songname">${song.name}</span><span id="songwhat">?</span>
+<span class="smaller">${number}/${max}</span><span id="songname">${song?.name}</span><span id="songwhat">?</span>
 </div>
 </div>
 

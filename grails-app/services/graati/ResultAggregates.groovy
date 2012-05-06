@@ -28,7 +28,11 @@ class ResultAggregates {
 	}
 	
 	def getNormalizedScore(def score) {
-		normalDistribution.cumulativeProbability(score)*10
+		if(score) {
+			normalDistribution.cumulativeProbability(score)*10
+		} else {
+			null
+		}
 	}
 	
 	def getMeanNormalizedScore() {

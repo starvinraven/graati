@@ -46,7 +46,7 @@
 <div id="header">
 	<div id="logo">
 		<h1><g:link controller="main">Graati</g:link></h1>
-		<p>Charts you actually care about</p>
+		<p></p>
 	</div>
 	<!-- end #logo -->
 	<div style="height:130px; float:right;">
