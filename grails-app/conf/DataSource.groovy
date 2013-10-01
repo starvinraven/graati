@@ -21,12 +21,25 @@ environments {
     }
 	test {
 		dataSource {
-			driverClassName = "com.mysql.jdbc.Driver"
-			dbCreate = "update" // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://localhost/graati"
-			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-			username = "graati"
-			password = "graati"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dbCreate = "update" // one of 'create', 'create-drop','update'
+            //url = "jdbc:mysql://db1.kapsi.fi/esmo?useUnicode=true&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost/graati?useUnicode=true&characterEncoding=UTF-8"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            username = "graati"
+            password = "graati"
+            properties {
+                minEvictableIdleTimeMillis = 900000
+                timeBetweenEvictionRunsMillis = 900000
+                numTestsPerEvictionRun = 3
+                testOnBorrow = true
+                testWhileIdle = true
+                testOnReturn = true
+                validationQuery = 'select 1'
+                minIdle = 1
+                maxActive = 16
+                initialSize = 4
+            }
 		}
 	}
     production {

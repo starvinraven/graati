@@ -53,7 +53,7 @@ environments {
 		grails.serverURL = "http://localhost:8080/${appName}"
 	}
 	test {
-		grails.serverURL = "http://misom.ath.cx/${appName}"
+		grails.serverURL = "http://misom.ath.cx:8080/${appName}"
 	}
 }
 

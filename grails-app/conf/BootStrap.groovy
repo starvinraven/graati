@@ -34,10 +34,15 @@ class BootStrap {
 			break;
 			
 			case 'test':
-			//createUBRaati()
+                createAbbaRaati()
 			break;
 		}
 	}
+
+    def createAbbaRaati() {
+        if(!Artist.findByName('ABBA')) Artist abba = new Artist(name: "ABBA").save(flush: true)
+        if(!Raati.findByName('ABBARaati')) Raati abbaRaati = new Raati(name: 'ABBARaati', owner: User.findByUsername('admin'), ends: now+14).save(flush: true)
+    }
 	
 	def createUBRaati() {
 		println "Creating UbRaati"
