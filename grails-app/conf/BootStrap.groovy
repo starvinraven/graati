@@ -27,10 +27,9 @@ class BootStrap {
 			break;
 			
 			case 'development':
-			createUBRaati()
+            createAbbaRaati()
 			createUserData()
 			createTestData()
-			createUBRaatiTestVotes()
 			break;
 			
 			case 'test':
@@ -41,8 +40,704 @@ class BootStrap {
 
     def createAbbaRaati() {
         Date now = new Date()
-        if(!Artist.findByName('ABBA')) Artist abba = new Artist(name: "ABBA").save(flush: true)
-        if(!Raati.findByName('ABBARaati')) Raati abbaRaati = new Raati(name: 'ABBARaati', owner: User.findByUsername('admin'), ends: now+14).save(flush: true)
+        Artist abba = new Artist(name: "ABBA").save(flush: true)
+        Raati abbaRaati = new Raati(name: 'ABBARaati', owner: User.findByUsername('admin'), ends: now+14).save(flush: true)
+
+        Album a0 = new Album(
+                name: "Ring Ring",
+                releaseYear: 1973,
+                artist: abba).save()
+
+        Song a0s0 = new Song(
+                name: "Another Town, Another Train",
+                indexNumber: 0,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Another Town, Another Train.mp3").save()
+
+        Song a0s1 = new Song(
+                name: "Disillusion",
+                indexNumber: 1,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Disillusion.mp3").save()
+
+        Song a0s2 = new Song(
+                name: "He Is Your Brother",
+                indexNumber: 2,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/He Is Your Brother.mp3").save()
+
+        Song a0s3 = new Song(
+                name: "I Am Just A Girl",
+                indexNumber: 3,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I Am Just A Girl.mp3").save()
+
+        Song a0s4 = new Song(
+                name: "I Saw It In The Mirror",
+                indexNumber: 4,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I Saw It In The Mirror.mp3").save()
+
+        Song a0s5 = new Song(
+                name: "Love Isn't Easy (But It Sure Is Hard Enough)",
+                indexNumber: 5,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Love Isn't Easy (But It Sure Is Hard Enough).mp3").save()
+
+        Song a0s6 = new Song(
+                name: "Me And Bobby And Bobby's Brother",
+                indexNumber: 6,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Me And Bobby And Bobby's Brother.mp3").save()
+
+        Song a0s7 = new Song(
+                name: "Nina, Pretty Ballerina",
+                indexNumber: 7,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Nina, Pretty Ballerina.mp3").save()
+
+        Song a0s8 = new Song(
+                name: "People Need Love",
+                indexNumber: 8,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/People Need Love.mp3").save()
+
+        Song a0s9 = new Song(
+                name: "Ring Ring",
+                indexNumber: 9,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Ring Ring.mp3").save()
+
+        Song a0s10 = new Song(
+                name: "Rock'n Roll Band",
+                indexNumber: 10,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Rock'n Roll Band.mp3").save()
+
+        Song a0s11 = new Song(
+                name: "She's My Kind Of Girl",
+                indexNumber: 11,
+                album: a0,
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/She's My Kind Of Girl.mp3").save()
+
+        [a0s0,a0s1,a0s2,a0s3,a0s4,a0s5,a0s6,a0s7,a0s8,a0s9,a0s10,a0s11].each {
+            a0.addToSongs(it)
+        }
+        a0.save(flush:true)
+
+
+        Album a1 = new Album(
+                name: "Waterloo",
+                releaseYear: 1974,
+                artist: abba).save()
+
+        Song a1s0 = new Song(
+                name: "Waterloo",
+                indexNumber: 0,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_01_-_Waterloo.mp3").save()
+
+        Song a1s1 = new Song(
+                name: "Sitting In The Palmtree",
+                indexNumber: 1,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_02_-_Sitting_In_The_Palmtree.mp3").save()
+
+        Song a1s2 = new Song(
+                name: "King Kong Song",
+                indexNumber: 2,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_03_-_King_Kong_Song.mp3").save()
+
+        Song a1s3 = new Song(
+                name: "Hasta Manana",
+                indexNumber: 3,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_04_-_Hasta_Manana.mp3").save()
+
+        Song a1s4 = new Song(
+                name: "My Mama Said",
+                indexNumber: 4,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_05_-_My_Mama_Said.mp3").save()
+
+        Song a1s5 = new Song(
+                name: "Dance (While The Music Still Goes On)",
+                indexNumber: 5,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_06_-_Dance_(While_The_Music_Still_Goes_On).mp3").save()
+
+        Song a1s6 = new Song(
+                name: "Honey, Honey",
+                indexNumber: 6,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_07_-_Honey,_Honey.mp3").save()
+
+        Song a1s7 = new Song(
+                name: "Watch Out",
+                indexNumber: 7,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_08_-_Watch_Out.mp3").save()
+
+        Song a1s8 = new Song(
+                name: "What About Livingstone",
+                indexNumber: 8,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_09_-_What_About_Livingstone.mp3").save()
+
+        Song a1s9 = new Song(
+                name: "Gonna Sing You My Love Song",
+                indexNumber: 9,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_10_-_Gonna_Sing_You_My_Love_Song.mp3").save()
+
+        Song a1s10 = new Song(
+                name: "Suzi-Hang-Around",
+                indexNumber: 10,
+                album: a1,
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_11_-_Suzi-Hang-Around.mp3").save()
+
+        [a1s0,a1s1,a1s2,a1s3,a1s4,a1s5,a1s6,a1s7,a1s8,a1s9,a1s10].each {
+            a1.addToSongs(it)
+        }
+        a1.save(flush:true)
+
+
+        Album a2 = new Album(
+                name: "ABBA",
+                releaseYear: 1975,
+                artist: abba).save()
+
+        Song a2s0 = new Song(
+                name: "Mamma Mia",
+                indexNumber: 0,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_01_-_Mamma_Mia.mp3").save()
+
+        Song a2s1 = new Song(
+                name: "Hey Hey Helen",
+                indexNumber: 1,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_02_-_Hey_Hey_Helen.mp3").save()
+
+        Song a2s2 = new Song(
+                name: "Tropical Loveland",
+                indexNumber: 2,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_03_-_Tropical_Loveland.mp3").save()
+
+        Song a2s3 = new Song(
+                name: "SOS",
+                indexNumber: 3,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_04_-_SOS.mp3").save()
+
+        Song a2s4 = new Song(
+                name: "Man In The Middle",
+                indexNumber: 4,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_05_-_Man_In_The_Middle.mp3").save()
+
+        Song a2s5 = new Song(
+                name: "Bang-A-Boomerang",
+                indexNumber: 5,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_06_-_Bang-A-Boomerang.mp3").save()
+
+        Song a2s6 = new Song(
+                name: "I Do, I Do, I Do, I Do, I Do",
+                indexNumber: 6,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_07_-_I_Do,_I_Do,_I_Do,_I_Do,_I_Do.mp3").save()
+
+        Song a2s7 = new Song(
+                name: "Rock Me",
+                indexNumber: 7,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_08_-_Rock_Me.mp3").save()
+
+        Song a2s8 = new Song(
+                name: "Intermezzo No 1",
+                indexNumber: 8,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_09_-_Intermezzo_No_1.mp3").save()
+
+        Song a2s9 = new Song(
+                name: "I've Been Waiting For You",
+                indexNumber: 9,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_10_-_I've_Been_Waiting_For_You.mp3").save()
+
+        Song a2s10 = new Song(
+                name: "So Long",
+                indexNumber: 10,
+                album: a2,
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_11_-_So_Long.mp3").save()
+
+        [a2s0,a2s1,a2s2,a2s3,a2s4,a2s5,a2s6,a2s7,a2s8,a2s9,a2s10].each {
+            a2.addToSongs(it)
+        }
+        a2.save(flush:true)
+
+
+        Album a3 = new Album(
+                name: "Arrival",
+                releaseYear: 1976,
+                artist: abba).save()
+
+        Song a3s0 = new Song(
+                name: "When I Kissed the Teacher",
+                indexNumber: 0,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_01_-_When_I_Kissed_the_Teacher.mp3").save()
+
+        Song a3s1 = new Song(
+                name: "Dancing Queen",
+                indexNumber: 1,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_02_-_Dancing_Queen.mp3").save()
+
+        Song a3s2 = new Song(
+                name: "My Love, My Life",
+                indexNumber: 2,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_03_-_My_Love,_My_Life.mp3").save()
+
+        Song a3s3 = new Song(
+                name: "Dum Dum Diddle",
+                indexNumber: 3,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_04_-_Dum_Dum_Diddle.mp3").save()
+
+        Song a3s4 = new Song(
+                name: "Knowing Me, Knowing You",
+                indexNumber: 4,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_05_-_Knowing_Me,_Knowing_You.mp3").save()
+
+        Song a3s5 = new Song(
+                name: "Money, Money, Money",
+                indexNumber: 5,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_06_-_Money,_Money,_Money.mp3").save()
+
+        Song a3s6 = new Song(
+                name: "That's Me",
+                indexNumber: 6,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_07_-_That's_Me.mp3").save()
+
+        Song a3s7 = new Song(
+                name: "Why Did It Have to Be Me",
+                indexNumber: 7,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_08_-_Why_Did_It_Have_to_Be_Me.mp3").save()
+
+        Song a3s8 = new Song(
+                name: "Tiger",
+                indexNumber: 8,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_09_-_Tiger.mp3").save()
+
+        Song a3s9 = new Song(
+                name: "Arrival",
+                indexNumber: 9,
+                album: a3,
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_10_-_Arrival.mp3").save()
+
+        [a3s0,a3s1,a3s2,a3s3,a3s4,a3s5,a3s6,a3s7,a3s8,a3s9].each {
+            a3.addToSongs(it)
+        }
+        a3.save(flush:true)
+
+
+        Album a4 = new Album(
+                name: "The Album",
+                releaseYear: 1977,
+                artist: abba).save()
+
+        Song a4s0 = new Song(
+                name: "Eagle",
+                indexNumber: 0,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_01_-_Eagle.mp3").save()
+
+        Song a4s1 = new Song(
+                name: "Take A Chance On Me",
+                indexNumber: 1,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_02_-_Take_A_Chance_On_Me.mp3").save()
+
+        Song a4s2 = new Song(
+                name: "One Man, One Woman",
+                indexNumber: 2,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_03_-_One_Man,_One_Woman.mp3").save()
+
+        Song a4s3 = new Song(
+                name: "The Name Of The Game",
+                indexNumber: 3,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_04_-_The_Name_Of_The_Game.mp3").save()
+
+        Song a4s4 = new Song(
+                name: "Move On",
+                indexNumber: 4,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_05_-_Move_On.mp3").save()
+
+        Song a4s5 = new Song(
+                name: "Hole In Your Soul",
+                indexNumber: 5,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_06_-_Hole_In_Your_Soul.mp3").save()
+
+        Song a4s6 = new Song(
+                name: "Thank You For The Music",
+                indexNumber: 6,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_07_-_Thank_You_For_The_Music.mp3").save()
+
+        Song a4s7 = new Song(
+                name: "I Wonder (Departure)",
+                indexNumber: 7,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_08_-_I_Wonder_(Departure).mp3").save()
+
+        Song a4s8 = new Song(
+                name: "I'm A Marionette",
+                indexNumber: 8,
+                album: a4,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_09_-_I'm_A_Marionette.mp3").save()
+
+        [a4s0,a4s1,a4s2,a4s3,a4s4,a4s5,a4s6,a4s7,a4s8].each {
+            a4.addToSongs(it)
+        }
+        a4.save(flush:true)
+
+
+        Album a5 = new Album(
+                name: "Voulez-Vous",
+                releaseYear: 1980,
+                artist: abba).save()
+
+        Song a5s0 = new Song(
+                name: "As Good As New",
+                indexNumber: 0,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_01_-_As_Good_As_New.mp3").save()
+
+        Song a5s1 = new Song(
+                name: "Voulez-Vous",
+                indexNumber: 1,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_02_-_Voulez-Vous.mp3").save()
+
+        Song a5s2 = new Song(
+                name: "I Have A Dream",
+                indexNumber: 2,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_03_-_I_Have_A_Dream.mp3").save()
+
+        Song a5s3 = new Song(
+                name: "Angeleyes",
+                indexNumber: 3,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_04_-_Angeleyes.mp3").save()
+
+        Song a5s4 = new Song(
+                name: "The King Has Lost His Crown",
+                indexNumber: 4,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_05_-_The_King_Has_Lost_His_Crown.mp3").save()
+
+        Song a5s5 = new Song(
+                name: "Does Your Mother Know",
+                indexNumber: 5,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_06_-_Does_Your_Mother_Know.mp3").save()
+
+        Song a5s6 = new Song(
+                name: "If It Wasn't For The Nights",
+                indexNumber: 6,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_07_-_If_It_Wasn't_For_The_Nights.mp3").save()
+
+        Song a5s7 = new Song(
+                name: "Chiquitita",
+                indexNumber: 7,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_08_-_Chiquitita.mp3").save()
+
+        Song a5s8 = new Song(
+                name: "Lovers (Live A Little Longer)",
+                indexNumber: 8,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_09_-_Lovers_(Live_A_Little_Longer).mp3").save()
+
+        Song a5s9 = new Song(
+                name: "Kisses Of Fire",
+                indexNumber: 9,
+                album: a5,
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_10_-_Kisses_Of_Fire.mp3").save()
+
+        [a5s0,a5s1,a5s2,a5s3,a5s4,a5s5,a5s6,a5s7,a5s8,a5s9].each {
+            a5.addToSongs(it)
+        }
+        a5.save(flush:true)
+
+
+        Album a6 = new Album(
+                name: "Super Trouper",
+                releaseYear: 1980,
+                artist: abba).save()
+
+        Song a6s0 = new Song(
+                name: "Super Trouper",
+                indexNumber: 0,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_01_-_Super_Trouper.mp3").save()
+
+        Song a6s1 = new Song(
+                name: "The Winner Takes It All",
+                indexNumber: 1,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_02_-_The_Winner_Takes_It_All.mp3").save()
+
+        Song a6s2 = new Song(
+                name: "On And On And On",
+                indexNumber: 2,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_03_-_On_And_On_And_On.mp3").save()
+
+        Song a6s3 = new Song(
+                name: "Andante, Andante",
+                indexNumber: 3,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_04_-_Andante,_Andante.mp3").save()
+
+        Song a6s4 = new Song(
+                name: "Me And I",
+                indexNumber: 4,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_05_-_Me_And_I.mp3").save()
+
+        Song a6s5 = new Song(
+                name: "Happy New Year",
+                indexNumber: 5,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_06_-_Happy_New_Year.mp3").save()
+
+        Song a6s6 = new Song(
+                name: "Our Last Summer",
+                indexNumber: 6,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_07_-_Our_Last_Summer.mp3").save()
+
+        Song a6s7 = new Song(
+                name: "The Piper",
+                indexNumber: 7,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_08_-_The_Piper.mp3").save()
+
+        Song a6s8 = new Song(
+                name: "Lay All Your Love On Me",
+                indexNumber: 8,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_09_-_Lay_All_Your_Love_On_Me.mp3").save()
+
+        Song a6s9 = new Song(
+                name: "The Way Old Friends Do",
+                indexNumber: 9,
+                album: a6,
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_10_-_The_Way_Old_Friends_Do.mp3").save()
+
+        [a6s0,a6s1,a6s2,a6s3,a6s4,a6s5,a6s6,a6s7,a6s8,a6s9].each {
+            a6.addToSongs(it)
+        }
+        a6.save(flush:true)
+
+
+        Album a7 = new Album(
+                name: "The Albums Bonus Tracks",
+                releaseYear: 1981,
+                artist: abba).save()
+
+        Song a7s0 = new Song(
+                name: "Merry-Go-Round",
+                indexNumber: 0,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_01_-_Merry-Go-Round.mp3").save()
+
+        Song a7s1 = new Song(
+                name: "Santa Rosa",
+                indexNumber: 1,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_02_-_Santa_Rosa.mp3").save()
+
+        Song a7s2 = new Song(
+                name: "Fernando",
+                indexNumber: 2,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_05_-_Fernando.mp3").save()
+
+        Song a7s3 = new Song(
+                name: "Crazy World",
+                indexNumber: 3,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_06_-_Crazy_World.mp3").save()
+
+        Song a7s4 = new Song(
+                name: "Happy Hawaii",
+                indexNumber: 4,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_07_-_Happy_Hawaii.mp3").save()
+
+        Song a7s5 = new Song(
+                name: "Summer Night City",
+                indexNumber: 5,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_08_-_Summer_Night_City.mp3").save()
+
+        Song a7s6 = new Song(
+                name: "Lovelight",
+                indexNumber: 6,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_10_-_Lovelight.mp3").save()
+
+        Song a7s7 = new Song(
+                name: "Gimme! Gimme! Gimme! (A Man After Midnight)",
+                indexNumber: 7,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_11_-_Gimme!_Gimme!_Gimme!_(A_Man_After_Midnight).mp3").save()
+
+        Song a7s8 = new Song(
+                name: "Elaine",
+                indexNumber: 8,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_12_-_Elaine.mp3").save()
+
+        Song a7s9 = new Song(
+                name: "Should I Laugh Or Cry",
+                indexNumber: 9,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_13_-_Should_I_Laugh_Or_Cry.mp3").save()
+
+        Song a7s10 = new Song(
+                name: "You Owe Me One",
+                indexNumber: 10,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_14_-_You_Owe_Me_One.mp3").save()
+
+        Song a7s11 = new Song(
+                name: "Cassandra",
+                indexNumber: 11,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_15_-_Cassandra.mp3").save()
+
+        Song a7s12 = new Song(
+                name: "Under Attack",
+                indexNumber: 12,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_16_-_Under_Attack.mp3").save()
+
+        Song a7s13 = new Song(
+                name: "The Day Before You Came",
+                indexNumber: 13,
+                album: a7,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_17_-_The_Day_Before_You_Came.mp3").save()
+
+        [a7s0,a7s1,a7s2,a7s3,a7s4,a7s5,a7s6,a7s7,a7s8,a7s9,a7s10,a7s11,a7s12,a7s13].each {
+            a7.addToSongs(it)
+        }
+        a7.save(flush:true)
+
+
+        Album a8 = new Album(
+                name: "The Visitors",
+                releaseYear: 1981,
+                artist: abba).save()
+
+        Song a8s0 = new Song(
+                name: "The Visitors",
+                indexNumber: 0,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_01_-_The_Visitors.mp3").save()
+
+        Song a8s1 = new Song(
+                name: "Head Over Heels",
+                indexNumber: 1,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_02_-_Head_Over_Heels.mp3").save()
+
+        Song a8s2 = new Song(
+                name: "When All Is Said And Done",
+                indexNumber: 2,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_03_-_When_All_Is_Said_And_Done.mp3").save()
+
+        Song a8s3 = new Song(
+                name: "Soldiers",
+                indexNumber: 3,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_04_-_Soldiers.mp3").save()
+
+        Song a8s4 = new Song(
+                name: "I Let The Music Speak",
+                indexNumber: 4,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_05_-_I_Let_The_Music_Speak.mp3").save()
+
+        Song a8s5 = new Song(
+                name: "One Of Us",
+                indexNumber: 5,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_06_-_One_Of_Us.mp3").save()
+
+        Song a8s6 = new Song(
+                name: "Two For The Price Of One",
+                indexNumber: 6,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_07_-_Two_For_The_Price_Of_One.mp3").save()
+
+        Song a8s7 = new Song(
+                name: "Slipping Through My Fingers",
+                indexNumber: 7,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_08_-_Slipping_Through_My_Fingers.mp3").save()
+
+        Song a8s8 = new Song(
+                name: "Like An Angel Passing Through My Room",
+                indexNumber: 8,
+                album: a8,
+                audioUrl: "http://esmo.kapsi.fi/abba/The Visitors/ABBA_-_The_Visitors_-_09_-_Like_An_Angel_Passing_Through_My_Room.mp3").save()
+
+        [a8s0,a8s1,a8s2,a8s3,a8s4,a8s5,a8s6,a8s7,a8s8].each {
+            a8.addToSongs(it)
+        }
+
+        a8.save(flush:true)
+
+        def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
+        def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
+
+        String password = springSecurityService.encodePassword('bra4ti')
+        User esa = new User(username: 'esa', enabled: true, password: password, email:"esa@everholt.org").save(flush:true)
+
+        UserRole.create(esa, adminRole, true)
+        UserRole.create(esa, userRole, true)
+
+        Raati raati = new Raati(
+                name: 'Abbaraatti',
+                owner: esa,
+                ends: new Date()-1,
+                privacy: RaatiPrivacy.PARTICIPANT_VOTING,
+                resultsReleased: true)
+
+        [a0, a1, a2, a3, a4, a5, a6, a7, a8].each {
+            raati.addToAlbums(it)
+        }
+        raati.save(flush:true)
     }
 	
 	def createUBRaati() {
