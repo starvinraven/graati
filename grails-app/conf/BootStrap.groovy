@@ -23,13 +23,13 @@ class BootStrap {
 		
 		switch (GrailsUtil.environment) {
 			case 'production':
-			//createUBRaati()
+			    //createUBRaati()
 			break;
 			
 			case 'development':
-            createAbbaRaati()
-			createUserData()
-			createTestData()
+                createAbbaRaati()
+			    //createUserData()
+			    //createTestData()
 			break;
 			
 			case 'test':
@@ -728,11 +728,11 @@ class BootStrap {
         UserRole.create(esa, userRole, true)
 
         Raati raati = new Raati(
-                name: 'Abbaraatti',
+                name: 'ABBA',
                 owner: esa,
-                ends: new Date()-1,
-                privacy: RaatiPrivacy.PARTICIPANT_VOTING,
-                resultsReleased: true)
+                ends: Date.parse("yyyy-MM-dd'T'HH:mm Z", "2013-10-12T14:00 +0300"),
+                privacy: RaatiPrivacy.PUBLIC,
+                resultsReleased: false)
 
         [a0, a1, a2, a3, a4, a5, a6, a7, a8].each {
             raati.addToAlbums(it)
