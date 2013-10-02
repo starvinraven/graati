@@ -18,7 +18,7 @@ class JsonController {
 		def song = Song.get(params.song)
 		def raati = Raati.get(params.raati)
 		if(!userService.canVote(user, raati)) {
-			def res = ["result" : "error"]
+			def res = ["result" : "error", "why": "cannotvote"]
 			render res as JSON
 			return
 		}
