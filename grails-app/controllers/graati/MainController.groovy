@@ -4,7 +4,7 @@ class MainController {
 	
 	def userService
 	
-	def index = { 
+	def index = {
 		def raatis = userService.getViewableRaatis().sort { it.ends }
 		println raatis
 		def raatiList = []

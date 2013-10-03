@@ -23,13 +23,13 @@ class BootStrap {
 		
 		switch (GrailsUtil.environment) {
 			case 'production':
-			//createUBRaati()
+			    //createUBRaati()
 			break;
 			
 			case 'development':
-            createAbbaRaati()
-			createUserData()
-			createTestData()
+                createAbbaRaati()
+			    //createUserData()
+			    //createTestData()
 			break;
 			
 			case 'test':
@@ -39,9 +39,11 @@ class BootStrap {
 	}
 
     def createAbbaRaati() {
-        Date now = new Date()
-        Artist abba = new Artist(name: "ABBA").save(flush: true)
-        Raati abbaRaati = new Raati(name: 'ABBARaati', owner: User.findByUsername('admin'), ends: now+14).save(flush: true)
+    	Artist abba = Artist.findByName("ABBA")
+    	
+    	if(abba) return
+    	
+        abba = new Artist(name: "ABBA").save(flush: true)
 
         Album a0 = new Album(
                 name: "Ring Ring",
@@ -717,21 +719,23 @@ class BootStrap {
         }
         a8.save(flush:true)
 
-        def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
-        def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
+        User esa = User.findByUsername('esa')
 
-        String password = springSecurityService.encodePassword('bra4ti')
-        User esa = new User(username: 'esa', enabled: true, password: password, email:"esa@everholt.org").save(flush:true)
+        if(!esa) {
+            println "create esa"
+            def userRole = Role.findByAuthority('ROLE_USER')
 
-        UserRole.create(esa, adminRole, true)
-        UserRole.create(esa, userRole, true)
+            String password = springSecurityService.encodePassword('bra4ti')
+            esa = new User(username: 'esa', enabled: true, password: password, email:"esa@everholt.org").save(flush:true)
+            UserRole.create(esa, userRole, true)
+        }
 
         Raati raati = new Raati(
-                name: 'Abbaraatti',
+                name: 'ABBA',
                 owner: esa,
-                ends: new Date()-1,
-                privacy: RaatiPrivacy.PARTICIPANT_VOTING,
-                resultsReleased: true)
+                ends: Date.parse("yyyy-MM-dd'T'HH:mm Z", "2013-10-12T14:00 +0300"),
+                privacy: RaatiPrivacy.PUBLIC,
+                resultsReleased: false)
 
         [a0, a1, a2, a3, a4, a5, a6, a7, a8].each {
             raati.addToAlbums(it)

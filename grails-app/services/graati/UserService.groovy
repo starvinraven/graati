@@ -19,7 +19,10 @@ class UserService {
 	
 	def getViewableRaatis() {
 		def user = getLoggedOnUser()
-		
+
+        def results = Raati.findAllByPrivacy(RaatiPrivacy.PUBLIC)
+
+        /*
 		def c = Raati.createCriteria()
 		def results = c.list {
 			or {
@@ -33,6 +36,8 @@ class UserService {
 				}
 			}
 		}
+		*/
+
 		results
 	}
 	
@@ -58,7 +63,7 @@ class UserService {
 	}
 	
 	def canVote(User user, Raati raati) {
-		if(raati?.resultsReleased || raati?.ends < new Date()) {
+		if(!user || raati?.resultsReleased || raati?.ends < new Date()) {
 			return false
 		}
 		def privacy = raati.privacy
@@ -68,6 +73,8 @@ class UserService {
 			case RaatiPrivacy.PARTICIPANT_VIEWING:
 			case RaatiPrivacy.PARTICIPANT_VOTING:
 				return (user == raati.owner || user in raati.participants || UserRole.get(user.id, Role.findByAuthority("ROLE_ADMIN")?.id))
+            default:
+                return false
 		}
 	}
 	
