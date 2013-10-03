@@ -52,7 +52,7 @@ class BootStrap {
                 name: "Another Town, Another Train",
                 indexNumber: 0,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Another Town, Another Train.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Another%20Town%2C%20Another%20Train.mp3").save()
 
         Song a0s1 = new Song(
                 name: "Disillusion",
@@ -64,61 +64,61 @@ class BootStrap {
                 name: "He Is Your Brother",
                 indexNumber: 2,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/He Is Your Brother.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/He%20Is%20Your%20Brother.mp3").save()
 
         Song a0s3 = new Song(
                 name: "I Am Just A Girl",
                 indexNumber: 3,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I Am Just A Girl.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I%20Am%20Just%20A%20Girl.mp3").save()
 
         Song a0s4 = new Song(
                 name: "I Saw It In The Mirror",
                 indexNumber: 4,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I Saw It In The Mirror.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/I%20Saw%20It%20In%20The%20Mirror.mp3").save()
 
         Song a0s5 = new Song(
                 name: "Love Isn't Easy (But It Sure Is Hard Enough)",
                 indexNumber: 5,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Love Isn't Easy (But It Sure Is Hard Enough).mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Love%20Isn%27t%20Easy%20%28But%20It%20Sure%20Is%20Hard%20Enough%29.mp3").save()
 
         Song a0s6 = new Song(
                 name: "Me And Bobby And Bobby's Brother",
                 indexNumber: 6,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Me And Bobby And Bobby's Brother.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Me%20And%20Bobby%20And%20Bobby%27s%20Brother.mp3").save()
 
         Song a0s7 = new Song(
                 name: "Nina, Pretty Ballerina",
                 indexNumber: 7,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Nina, Pretty Ballerina.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Nina%2C%20Pretty%20Ballerina.mp3").save()
 
         Song a0s8 = new Song(
                 name: "People Need Love",
                 indexNumber: 8,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/People Need Love.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/People%20Need%20Love.mp3").save()
 
         Song a0s9 = new Song(
                 name: "Ring Ring",
                 indexNumber: 9,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Ring Ring.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Ring%20Ring.mp3").save()
 
         Song a0s10 = new Song(
                 name: "Rock'n Roll Band",
                 indexNumber: 10,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Rock'n Roll Band.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/Rock%27n%20Roll%20Band.mp3").save()
 
         Song a0s11 = new Song(
                 name: "She's My Kind Of Girl",
                 indexNumber: 11,
                 album: a0,
-                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/She's My Kind Of Girl.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Ring Ring/She%27s%20My%20Kind%20Of%20Girl.mp3").save()
 
         [a0s0,a0s1,a0s2,a0s3,a0s4,a0s5,a0s6,a0s7,a0s8,a0s9,a0s10,a0s11].each {
             a0.addToSongs(it)
@@ -165,13 +165,13 @@ class BootStrap {
                 name: "Dance (While The Music Still Goes On)",
                 indexNumber: 5,
                 album: a1,
-                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_06_-_Dance_(While_The_Music_Still_Goes_On).mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_06_-_Dance_%28While_The_Music_Still_Goes_On%29.mp3").save()
 
         Song a1s6 = new Song(
                 name: "Honey, Honey",
                 indexNumber: 6,
                 album: a1,
-                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_07_-_Honey,_Honey.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Waterloo/ABBA_-_Waterloo_-_07_-_Honey%2C_Honey.mp3").save()
 
         Song a1s7 = new Song(
                 name: "Watch Out",
@@ -248,7 +248,7 @@ class BootStrap {
                 name: "I Do, I Do, I Do, I Do, I Do",
                 indexNumber: 6,
                 album: a2,
-                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_07_-_I_Do,_I_Do,_I_Do,_I_Do,_I_Do.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_07_-_I_Do%2C_I_Do%2C_I_Do%2C_I_Do%2C_I_Do.mp3").save()
 
         Song a2s7 = new Song(
                 name: "Rock Me",
@@ -266,7 +266,7 @@ class BootStrap {
                 name: "I've Been Waiting For You",
                 indexNumber: 9,
                 album: a2,
-                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_10_-_I've_Been_Waiting_For_You.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/ABBA/ABBA_-_ABBA_-_10_-_I%27ve_Been_Waiting_For_You.mp3").save()
 
         Song a2s10 = new Song(
                 name: "So Long",
@@ -301,7 +301,7 @@ class BootStrap {
                 name: "My Love, My Life",
                 indexNumber: 2,
                 album: a3,
-                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_03_-_My_Love,_My_Life.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_03_-_My_Love%2C_My_Life.mp3").save()
 
         Song a3s3 = new Song(
                 name: "Dum Dum Diddle",
@@ -313,19 +313,19 @@ class BootStrap {
                 name: "Knowing Me, Knowing You",
                 indexNumber: 4,
                 album: a3,
-                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_05_-_Knowing_Me,_Knowing_You.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_05_-_Knowing_Me%2C_Knowing_You.mp3").save()
 
         Song a3s5 = new Song(
                 name: "Money, Money, Money",
                 indexNumber: 5,
                 album: a3,
-                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_06_-_Money,_Money,_Money.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_06_-_Money%2C_Money%2C_Money.mp3").save()
 
         Song a3s6 = new Song(
                 name: "That's Me",
                 indexNumber: 6,
                 album: a3,
-                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_07_-_That's_Me.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Arrival/ABBA_-_Arrival_-_07_-_That%27s_Me.mp3").save()
 
         Song a3s7 = new Song(
                 name: "Why Did It Have to Be Me",
@@ -372,7 +372,7 @@ class BootStrap {
                 name: "One Man, One Woman",
                 indexNumber: 2,
                 album: a4,
-                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_03_-_One_Man,_One_Woman.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_03_-_One_Man%2C_One_Woman.mp3").save()
 
         Song a4s3 = new Song(
                 name: "The Name Of The Game",
@@ -402,13 +402,13 @@ class BootStrap {
                 name: "I Wonder (Departure)",
                 indexNumber: 7,
                 album: a4,
-                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_08_-_I_Wonder_(Departure).mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_08_-_I_Wonder_%28Departure%29.mp3").save()
 
         Song a4s8 = new Song(
                 name: "I'm A Marionette",
                 indexNumber: 8,
                 album: a4,
-                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_09_-_I'm_A_Marionette.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/The Album/ABBA_-_The_Album_-_09_-_I%27m_A_Marionette.mp3").save()
 
         [a4s0,a4s1,a4s2,a4s3,a4s4,a4s5,a4s6,a4s7,a4s8].each {
             a4.addToSongs(it)
@@ -461,7 +461,7 @@ class BootStrap {
                 name: "If It Wasn't For The Nights",
                 indexNumber: 6,
                 album: a5,
-                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_07_-_If_It_Wasn't_For_The_Nights.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_07_-_If_It_Wasn%27t_For_The_Nights.mp3").save()
 
         Song a5s7 = new Song(
                 name: "Chiquitita",
@@ -473,7 +473,7 @@ class BootStrap {
                 name: "Lovers (Live A Little Longer)",
                 indexNumber: 8,
                 album: a5,
-                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_09_-_Lovers_(Live_A_Little_Longer).mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Voulez-Vous/Abba_-_Voulez-Vous_-_09_-_Lovers_%28Live_A_Little_Longer%29.mp3").save()
 
         Song a5s9 = new Song(
                 name: "Kisses Of Fire",
@@ -514,7 +514,7 @@ class BootStrap {
                 name: "Andante, Andante",
                 indexNumber: 3,
                 album: a6,
-                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_04_-_Andante,_Andante.mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/Super Trouper/ABBA_-_Super_Trouper_-_04_-_Andante%2C_Andante.mp3").save()
 
         Song a6s4 = new Song(
                 name: "Me And I",
@@ -609,7 +609,7 @@ class BootStrap {
                 name: "Gimme! Gimme! Gimme! (A Man After Midnight)",
                 indexNumber: 7,
                 album: a7,
-                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_11_-_Gimme!_Gimme!_Gimme!_(A_Man_After_Midnight).mp3").save()
+                audioUrl: "http://esmo.kapsi.fi/abba/The Albums Bonus Tracks/ABBA_-_The_Albums_Bonus_Tracks_-_11_-_Gimme%21_Gimme%21_Gimme%21_%28A_Man_After_Midnight%29.mp3").save()
 
         Song a7s8 = new Song(
                 name: "Elaine",
@@ -715,7 +715,6 @@ class BootStrap {
         [a8s0,a8s1,a8s2,a8s3,a8s4,a8s5,a8s6,a8s7,a8s8].each {
             a8.addToSongs(it)
         }
-
         a8.save(flush:true)
 
         def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
