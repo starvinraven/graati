@@ -39,7 +39,11 @@ class BootStrap {
 	}
 
     def createAbbaRaati() {
-        Artist abba = new Artist(name: "ABBA").save(flush: true)
+    	Artist abba = Artist.findByName("ABBA")
+    	
+    	if(abba) return
+    	
+        abba = new Artist(name: "ABBA").save(flush: true)
 
         Album a0 = new Album(
                 name: "Ring Ring",
