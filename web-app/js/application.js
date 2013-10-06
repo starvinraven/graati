@@ -4,16 +4,26 @@ $( function() {
 	var maxHeight = 500;
 
 	$(".comment").each(function() {
-		$(this).focus(function() {
-			$(this).addClass("selected");
-		});
+        $(this).bind("input", function() {
+            $(this).data("changed", true);
+            $(this).addClass("selected");
+        });
+
+        $(this).bind("propertychange", function() {
+            $(this).data("changed", true);
+            $(this).addClass("selected");
+        });
+
+
 		$(this).blur(function() {
-			var song = $(this).attr('id').substr(7);
-			var raati = getQueryParam('id');
-			var comment = $("#comment"+song).val();
-			var score = $("#song"+song).val();
-			var parms = {song: song, raati: raati, comment: comment, vote:score}
-			savevote(parms);
+            if($(this).data("changed")) {
+                var song = $(this).attr('id').substr(7);
+                var raati = getQueryParam('id');
+                var comment = $("#comment"+song).val();
+                var score = $("#song"+song).val();
+                var parms = {song: song, raati: raati, comment: comment, vote:score}
+                savevote(parms);
+            }
 		});
 
 		/*
@@ -88,7 +98,8 @@ function savevote(parms) {
 			if(data.normalized) {
 				updateNormalized(data.normalized)
 			}
-			$("#comment"+parms.song).removeClass("selected")
+			$("#comment"+parms.song).removeClass("selected");
+            $("#comment"+parms.song).data("changed", false);
 		},
 		error: function (XMLHttpRequest, textStatus, errorThrown) {
 			alert("Error saving vote!")
